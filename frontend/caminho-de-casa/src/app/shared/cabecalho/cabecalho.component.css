@@ -1,0 +1,17 @@
+nav{
+  height: 100%;
+}
+
+.side-nav-button{
+  color: #FF6600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.0rem;
+  cursor: pointer;
+}
+
+.side-nav-button:hover{
+  background-color: #333333;
+  border-radius: 30%;
+}

@@ -1,0 +1,38 @@
+<div>
+  <h1 mat-dialog-title>Dados do Fornecedor</h1>
+</div>
+
+<div mat-dialog-content>
+  <form [formGroup]="fornecedorForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Fornecedor</mat-label>
+      <input formControlName="nome" matInput placeholder="Nome do Fornecedor ou razão social" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Descrição</mat-label>
+      <textarea formControlName="descricao" matInput></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Foto</mat-label>
+      <input formControlName="foto" matInput placeholder="imagem do fornecedor" />
+    </mat-form-field>
+
+  </form>
+  <br>
+  <div class="example-button-row" >
+    <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+    <button type="button" style="margin-left: 8px; "class="btn btn-dark" (click)="cadastrarFornecedor()">{{qualOper}}</button>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+

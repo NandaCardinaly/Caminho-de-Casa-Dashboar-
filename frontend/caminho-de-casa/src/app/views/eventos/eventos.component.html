@@ -1,0 +1,82 @@
+<mat-toolbar-row>
+  <span><a routerLink="/">Home</a> > </span>
+  <span>Eventos e agendamentos</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  </button>
+
+  <div class="example-button-row">
+    <button type="button" class="btn btn-dark"(click)="openDialog()">Cadastre e agende um evento</button>
+  </div>
+</mat-toolbar-row>
+
+<div class="container">
+  <div style="margin-top: 10px">
+
+    <!-- Aqui começa minha tabela de dados -->
+      <mat-form-field>
+        <mat-label>Filtre por qualquer informação</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Nome do evento ou data" #input>
+      </mat-form-field>
+
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Evento </th>
+            <td mat-cell *matCellDef="let row"> {{row.nome}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="descricao">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Descricão </th>
+            <td mat-cell *matCellDef="let row"> {{row.descricao}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="dataInicio">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Data inicial </th>
+            <td mat-cell *matCellDef="let row"> {{row.dataInicio | date : 'dd/MM/yyyy' }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="dataFim">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Data final </th>
+            <td mat-cell *matCellDef="let row"> {{row.dataFim | date : 'dd/MM/yyyy' }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="horaInicio">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Começo </th>
+            <td mat-cell *matCellDef="let row"> {{row.horaInicio | slice:-5}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="horaFim">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Término </th>
+            <td mat-cell *matCellDef="let row"> {{row.horaFim | slice:-5}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="acao">
+            <th  mat-header-cell  style="width: 30vh" *matHeaderCellDef mat-sort-header> ﾠﾠﾠﾠﾠﾠAção </th>
+            <td mat-cell *matCellDef="let row">
+              <button mat-icon-button color="primary" (click)="openDialogImage(row)"> <mat-icon>camera_alt</mat-icon> </button>
+              <button mat-icon-button color="basic" (click)="editarEvento(row)"> <mat-icon>edit</mat-icon> </button>
+              <button mat-icon-button color="warn" (click)="excluirEvento(row)"> <mat-icon>delete</mat-icon> </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">ﾠﾠﾠﾠﾠSem eventos cadastrados/agendados: "{{input.value}}"</td>
+          </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Selecione uma página"></mat-paginator>
+
+      </div>
+
+  </div>
+</div>
+
+
+

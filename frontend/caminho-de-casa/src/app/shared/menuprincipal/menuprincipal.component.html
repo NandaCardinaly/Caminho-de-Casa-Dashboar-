@@ -1,0 +1,20 @@
+<div class="menuPrincipal" >
+
+  <ul class="listaMenu" [ngClass]="{'nav-list-open': menuStatus}">
+      <li class="listaMenuItem" *ngFor="let item of lista">
+        <i class="{{item.icon}}"></i>
+        <span>
+          <a href= "#" routerLink= {{item.routerLink}} >{{item.name}} </a>
+        </span>
+      </li>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+   <a  routerLink= "/">   <i class="fa-solid fa-toggle-on" >   </i>ﾠﾠ Sair </a>
+
+   </ul>
+
+  </div>

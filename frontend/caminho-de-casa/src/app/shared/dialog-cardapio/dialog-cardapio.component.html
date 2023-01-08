@@ -1,0 +1,46 @@
+<div>
+  <h1 mat-dialog-title>Adicionar ao cardápio</h1>
+</div>
+
+<div mat-dialog-content>
+  <form [formGroup]="cardapioForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input formControlName="nome" matInput placeholder="Ex: Cuscuz ou Cachaça 51" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Categoria</mat-label>
+      <mat-select [(value)]="categoria" placeholder="categoria">
+          <mat-option value="comida"> Comida </mat-option>
+          <mat-option value="bebida"> Bebida </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Descrição</mat-label>
+      <textarea formControlName="descricao" matInput></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+    <mat-label>Preço</mat-label>
+     <input formControlName="preco" matInput placeholder="Ex: 0.99" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Foto</mat-label>
+      <input formControlName="foto" matInput placeholder="a imagem é opcional" />
+    </mat-form-field>
+  </form>
+  <br>
+  <div class="example-button-row" >
+    <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+    <button type="button" style="margin-left: 8px;"class="btn btn-dark" (click)="cadastrarItemNoCardapio()">{{qualOper}}</button>
+  </div>
+
+</div>
+
+
+
+

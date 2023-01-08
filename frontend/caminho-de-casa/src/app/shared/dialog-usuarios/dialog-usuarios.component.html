@@ -1,0 +1,50 @@
+<div>
+  <h1 mat-dialog-title>Cadastro de usuário</h1>
+</div>
+
+<div mat-dialog-content>
+  <form [formGroup]="usuarioForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Usuário</mat-label>
+      <input formControlName="nome" matInput placeholder="Nome do usuário" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>CPF</mat-label>
+      <input formControlName="cpf" matInput placeholder="CPF sem pontos ou traços" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Telefone</mat-label>
+      <input formControlName="telefone" matInput placeholder="Telefone/Celular" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput placeholder="Ex: fernanda@exemplo.com" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Senha</mat-label>
+      <input type="password" formControlName="senha" matInput placeholder="Dica: combine letras e números" />
+    </mat-form-field>
+
+
+  </form>
+  <br>
+  <div class="example-button-row" >
+    <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+    <button type="button" style="margin-left: 8px; "class="btn btn-dark" (click)="cadastrarUsuario()">{{qualOper}}</button>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+

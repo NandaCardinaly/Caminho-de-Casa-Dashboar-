@@ -1,0 +1,45 @@
+<div>
+  <h1 mat-dialog-title>Adicionar um evento</h1>
+</div>
+
+<div mat-dialog-content>
+  <form [formGroup]="eventoForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Evento</mat-label>
+      <input formControlName="nome" matInput placeholder="Ex: Workshop" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Descrição</mat-label>
+      <textarea formControlName="descricao" matInput></textarea>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Data de início | Data Final </mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input formControlName="dataInicio" matStartDate placeholder="Data inicial">
+        <input formControlName="dataFim" matEndDate placeholder="Data final">
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-date-range-input>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Foto</mat-label>
+      <input formControlName="foto" matInput placeholder="a imagem é opcional" />
+    </mat-form-field>
+
+
+  </form>
+  <br>
+  <div class="example-button-row" >
+    <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+    <button type="button" style="margin-left: 8px;"class="btn btn-dark" (click)="cadastrarEvento()">{{qualOper}}</button>
+  </div>
+
+</div>
+
+
+
+
+

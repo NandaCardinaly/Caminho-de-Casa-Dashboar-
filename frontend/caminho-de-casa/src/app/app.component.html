@@ -1,0 +1,16 @@
+<div class="container-fluid g-0">
+  <app-cabecalho (menuDeslizar)="menuStatus = $event;"></app-cabecalho>
+
+  <main>
+    <app-menuprincipal [menuStatus]="menuStatus" [ngClass]="{'app-menuprincipal-aberto': menuStatus}"></app-menuprincipal>
+    <div class="display-area p-3" [ngClass]="{'display-area-aberto': menuStatus}">
+    <router-outlet></router-outlet>
+
+    </div>
+
+  </main>
+
+
+</div>
+
+

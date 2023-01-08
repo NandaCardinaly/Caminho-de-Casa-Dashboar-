@@ -1,0 +1,20 @@
+
+.container .image-container image{
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 10px;
+
+}
+
+@media (max-width: 768px){
+  .container .image-container image{
+    width: 95%
+  }
+}
+
+
+
+

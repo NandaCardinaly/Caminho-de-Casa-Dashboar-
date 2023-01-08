@@ -1,0 +1,61 @@
+<mat-toolbar-row>
+
+  <span><a routerLink="/">Home</a> > </span>
+  <span>Cardápio</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+  </button>
+
+  <div class="example-button-row">
+    ﾠﾠ<button type="button" class="btn btn-dark" (click)="openDialog()">Adicionar itens no cardápio</button>
+  </div>
+<br>
+</mat-toolbar-row>
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col"  *ngFor="let item of dataSource">
+      <div class="card" style="width: 18rem;">
+        <img src= {{item.foto}} class="card-img-top" alt="...">
+        <div class="card-body">
+        <h3 class="card-title">{{item.nome}}</h3>
+        <p class="card-text">{{item.descricao}}</p>
+        Ações:ﾠ
+        <a style="color:black" (click)="editarComida(item)"><i class="fa fa-pencil-square" aria-hidden="true"></i></a> ﾠ
+        <a style="color: red" (click)="excluirComida(item)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+        </div>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">Preço: R$ {{item.preco}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container text-center">
+  <div class="row">
+    <div class="col" *ngFor="let itemB of dataSourceB">
+      <div class="card" style="width: 18rem;">
+        <img src= {{itemB.foto}} class="card-img-top" alt="...">
+        <div class="card-body">
+        <h3 class="card-title">{{itemB.nome}}</h3>
+        <p class="card-text">{{itemB.descricao}}</p>
+        Ações:ﾠ
+        <a style="color:black" (click)="editarBebida(itemB)"><i class="fa fa-pencil-square" aria-hidden="true"></i></a> ﾠ
+        <a style="color: red" (click)="excluirBebida(itemB)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+        </div>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">Preço: R$ {{itemB.preco}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

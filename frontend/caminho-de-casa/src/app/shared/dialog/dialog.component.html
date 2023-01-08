@@ -1,0 +1,52 @@
+  <div>
+  <h1 mat-dialog-title>Dados do Funcionário</h1>
+  </div>
+
+<div mat-dialog-content>
+  <form [formGroup]="funcionarioForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Nome completo</mat-label>
+      <input formControlName="nome" matInput placeholder="Nome completo" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Idade</mat-label>
+      <input formControlName="idade" matInput placeholder="idade" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Cargo</mat-label>
+      <input formControlName="cargo" matInput placeholder="cargo" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Admissão</mat-label>
+      <input formControlName="anoAdmissao" matInput placeholder="anoAdmissao" />
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Naturalidade</mat-label>
+      <input formControlName="naturalidade" matInput placeholder="naturalidade" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Hobbie</mat-label>
+      <input formControlName="hobbie" matInput placeholder="hobbie" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Foto</mat-label>
+      <input formControlName="foto" matInput placeholder="foto do colaborador" />
+    </mat-form-field>
+  </form>
+  <br>
+  <div class="example-button-row" >
+    <button mat-raised-button color="warn" mat-dialog-close>Fechar</button>
+    <button type="button" style="margin-left: 8px;"class="btn btn-dark" (click)="cadastrarFuncionario()">{{qualOper}}</button>
+  </div>
+
+</div>
+
+
+
