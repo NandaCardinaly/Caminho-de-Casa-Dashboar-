@@ -49,5 +49,5 @@ acesso "username" e "password" pelas suas pessoais.
 #### Autoria: Fernanda Cardinaly
 
 Fernanda Cardinaly -
-fernandasilva@gft.com
+fernanda.silva@gft.com
 
